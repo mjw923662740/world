@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/jquery.js"></script>
+    <style>
+       @media(min-width:1024px){
+           .quan{
+               height: 100%;
+               height: 100%;
+               border: 2px solid black;
+           }
+           header{
+               width: 100%;
+               border-bottom:2px solid black;
+               text-align: center;
+               height: 40px;
+               line-height: 40px;
+               position: relative; 
+           }
+           .xz{
+               width: 20%;
+               position: absolute;
+               height: 40px;
+               top: 0;
+               right: 0;
+               clear: both;
+               margin: 5px auto;
+               
+           }
+           .xz div{
+               width: 80px;
+               height: 30px;
+               line-height: 30px;
+               text-align: center;
+               border: 2px solid red;
+               float: left;
+               margin-left:20px; 
+           }
+           section{
+               display: -webkit-box;
+               -webkit-box-orient: vertical;
+               width: 100%;
+               height: 100%;
+           }
+           .conter{
+               position: relative;
+               margin: 0 auto;
+               -webkit-box-orient: horizontal;
+               width: 80%;
+           }
+           input{
+               margin:100px auto; 
+               height: 40px;
+               width: 80%;
+               border: 2px solid black;
+           }
+           .cx{
+               width: 50px;
+               height: 40px;
+               border: 2px solid red;
+               text-align: center;
+               line-height: 40px;
+               position: absolute;
+               top: 0;
+               right: 0;
+           }
+           .conter-a{
+               display: inline-block;width: 30%;
+           }
+           .conter-4{
+               position: absolute;
+               top: 100px;
+               right: 0;
+           }
+           .conter-b{
+               border: 2px solid black;
+               width: 80%;
+               height: 50%;
+               margin: 20px auto;
+           }
+           .conter-b-l{
+               width: 100%;
+               height: 40px;
+               line-height: 40px;
+               text-align: center;
+               border-right:2px solid black; 
+               border-bottom:2px solid black; 
+           }
+           .conter-b-r{
+            width: 100%;
+               height: 400px;
+               line-height: 400px;
+               text-align: center;
+               border-right:2px solid black; 
+               border-bottom:2px solid black; 
+           }
+           .conter-b-l-l{
+               width: 20%;
+               line-height: 40px;
+               text-align: center;
+               border-right:2px solid black; 
+           }
+           .conter-b-l-r{
+            width: 80%;
+               line-height: 40px;
+               text-align: center;
+           }
+           .conter-b-l-l{
+               width: 20%;
+               line-height: 40px;
+               text-align: center;
+               border-right:2px solid black; 
+           }
+           .conter-b-r-l{
+            width: 20%;
+               height: 400px;
+               text-align: center;
+               border-right:2px solid black;  
+           }
+           .zz{
+            display: -webkit-flex;
+               justify-content: center;
+               align-items: center;
+               width: 100%;
+               height: 100%;
+               background: rgba(0, 0, 0, 0.0);
+               position: fixed;
+               z-index: -1;
+           }
+           .nr{
+               width: 40%;
+               height: 50%;
+               background-color: white;
+               text-align: center;
+               z-index:500;
+               display: none;
+           }
+       }
+       @media(min-width:320px) and (max-width:768px){
+        .quan{
+               height: 100%;
+               height: 100%;
+               border: 0.02rem solid black;
+               display:-webkit-box;
+               -webkit-box-orient: vertical; 
+           }
+           header{
+               width: 100%;
+               border-bottom:0.02rem solid black;
+               text-align: center;
+               height: 0.4rem;
+               line-height: 0.40rem;
+               position: relative; 
+           }
+           .xz{
+               width: 50%;
+               height: 0.40rem;
+               top: 0;
+               right: 0;
+               clear: both;
+               margin: 5px auto;
+               
+           }
+           .xz div{
+               height: 0.30rem;
+               line-height: 0.30rem;
+               text-align: center;
+               border: 0.02rem solid red;
+               float: left;
+               margin-left:0.20rem; 
+           }
+           section{
+               display: -webkit-box;
+               -webkit-box-orient: vertical;
+               width: 100%;
+               height: 100%;
+           }
+           .conter{
+               position: relative;
+               margin: 0.3rem auto;
+               -webkit-box-orient: horizontal;
+               width: 80%;
+           }
+           input{ 
+               height: 0.40rem;
+               width: 24%;
+               border: 0.02rem solid black;
+           }
+           .cx{
+               width: 0.50rem;
+               height: 0.40rem;
+               border: 0.02rem solid red;
+               text-align: center;
+               line-height: 0.40rem;
+           }
+           .conter-a{
+               display: inline-block;
+               width: 22%;
+           }
+           .conter-4{
+               top: 1rem;
+               right: 0;
+           }
+           .conter-b{
+               border: 0.02rem solid black;
+               width: 80%;
+               height: 50%;
+               margin: 0.20rem auto;
+           }
+           .conter-b-l{
+               width: 100%;
+               height: 0.40rem;
+               line-height: 0.40rem;
+               text-align: center;
+               border-right:0.02rem solid black; 
+               border-bottom:0.02rem solid black; 
+           }
+           .conter-b-r{
+            width: 100%;
+               height: 4rem;
+               line-height: 4rem;
+               text-align: center;
+               border-right:0.02rem solid black; 
+               border-bottom:0.0rem solid black; 
+           }
+           .conter-b-l-l{
+               width: 20%;
+               line-height: 0.4rem;
+               text-align: center;
+               border-right:0.02rem solid black; 
+           }
+           .conter-b-l-r{
+            width: 80%;
+               line-height: 0.4rem;
+               text-align: center;
+           }
+           .conter-b-l-l{
+               width: 20%;
+               line-height: 0.4rem;
+               text-align: center;
+               border-right:0.02rem solid black; 
+           }
+           .conter-b-r-l{
+            width: 20%;
+               height: 4rem;
+               text-align: center;
+               border-right:0.02rem solid black;  
+           }
+           .zz{
+            display: -webkit-flex;
+               justify-content: center;
+               align-items: center;
+               width: 100%;
+               height: 100%;
+               background: rgba(0, 0, 0, 0.0);
+               position: fixed;
+               z-index: -1;
+           }
+           .nr{
+               width: 40%;
+               height: 40%;
+               background-color: white;
+               text-align: center;
+               z-index:500;
+               display: none;
+           }
+
+       }
+    </style>
+</head>
+<body>
+    <div class="zz">
+            <div class="nr">
+                    <span>加加加</span>
+                    <button class="gg">关闭</button>
+                </div>
+    </div>
+    
+    <div class="quan">
+        <header>
+            <nav>notebook网络记事本</nav>
+            <div class="xz">
+                <div>下载</div>
+                <div class="dd">添加记事本</div>
+            </div> 
+        </header>
+        <section>
+            <div class="conter">
+                    <div class="conter-1 conter-a">题目：<input type="text"></div>
+                    <div class="conter2 conter-a">内容：<input type="text"></div>
+                    <div class="conter-3 conter-a">时间：<input type="text"></div>
+                    <div class="conter-4 conter-a"><div class="cx">查询</div></div>
+            </div>
+            <div class="conter-b">
+                <div class="conter-b-l conter-b-div clear">
+                    <div class="conter-b-l-l fl">题目</div>
+                    <div class="conter-b-l-r fl">内容</div>
+                </div>
+                <div class="conter-b-r conter-b-div">
+                        <div class="conter-b-r-l"></div>
+                        <div class="conter-b-r-r"></div>        
+                </div>
+            </div>
+            
+        </section>
+    </div>
+    
+</body>
+</html>
+<script>
+    //字体
+        fnResize()
+        window.onresize = function() {
+            fnResize()
+        }
+        
+        function fnResize() {
+            var deviceWidth = document.documentElement.clientWidth ||
+                window.innerWidth
+            if (deviceWidth >= 750) {
+                deviceWidth = 750
+            }
+            if (deviceWidth <= 320) {
+                deviceWidth = 320
+            }
+            document.documentElement.style.fontSize = (deviceWidth / 7.5 * 2) + 'px'
+        }
+    
+    </script>
+    <script>
+    $('.dd').click(function(){
+        $('.zz').css({'background':'rgba(0, 0, 0, 0.6)','z-index':'5'})
+        $('.nr').css({'display':'block'})
+    })
+    $('.gg').click(function(){
+        $('.zz').css({'background':'rgba(0, 0, 0, 0.0)','z-index':'-1'})
+        $('.nr').css({'display':'none'})
+    })
+    </script>

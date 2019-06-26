@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/denglu.css">
+    <script src="js/jquery.js"></script>
+    <style>
+    @media(min-width:900)and(max-width:1280){
+        .header{
+            width: 800px;
+
+        }
+
+    }
+        @media(min-width:600)and(max-width:900){
+        .header{
+            width: 500px;
+        }
+
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="quan">
+    <div class="header">
+        <div class="header-w">
+            京东登录
+        </div>
+        <div class="header-f"></div>
+    </div>
+    <div class="section">
+        <div class="name">
+            <div class="username">
+                <input type="text" placeholder="用户名/邮箱/已验证手机"class='uname'>
+            </div>
+            <div class="password">
+                <input type="password"placeholder="请输入密码"class="m">
+                <div class="password-x"></div>
+                <div class="password-y">忘记密码</div>
+            </div>
+        </div>
+        <div class="sign">登录</div>
+        <div class="Verification">一键验证</div>
+        <div class="sms clear">
+            <a href="#" class="fl">短信验证登录</a>
+            <a href="#" class="fr">手机快速注册</a>
+        </div>
+        <div class="Other">
+            <div class="Other-top">
+                <div class="Other-top-text">其他登录方式</div>
+            </div>
+        </div>
+        <div class="QQ">
+            <div class="QQ-logo"></div>
+            <span>QQ</span>
+        </div>
+        <div class="agreement-tips">
+                登录即代表您已同意<a href="#">京东隐私政策</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+$('.sign').click(function(){
+var y=$('.uname').val()
+var m=$('.m').val()
+$.ajax({
+					type:"get",
+					url:"http://192.168.2.152/login.php?username="+y+"&password="+m,
+					async:true,
+					success:function(datas){
+						// console.log(JSON.parse(datas))
+                        var data=JSON.parse(datas)
+                        if(data.made==0){
+                            alert(data.msg)
+                        }else{
+                            alert(data.msg)
+                        }
+					},
+				});
+})
+
+</script>
+<script>
+    fnResize()
+    window.onresize = function () {
+    fnResize()
+    }
+    function fnResize() {
+    var deviceWidth = document.documentElement.clientWidth ||
+     window.innerWidth
+    if (deviceWidth >= 750) {
+    deviceWidth = 750
+    }
+    if (deviceWidth <= 320) {
+    deviceWidth = 320
+    }
+    document.documentElement.style.fontSize = (deviceWidth / 7.5*2) + 'px'
+    }
+</script>

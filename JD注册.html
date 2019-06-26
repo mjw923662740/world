@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/jquery.js"></script>
+    <style>
+        html{
+            background-color:#f7f7f7 ;
+        }
+        .quan{
+            height: ;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+        }
+    .header{
+            position: relative;
+            width: 100%;
+            height: 0.44rem;
+            padding: 0 0.24rem;
+            margin-bottom:0.2rem; 
+            border-bottom: 1px solid #bbb;
+        }
+        .header-f{
+            position: absolute;
+            width: 0.24rem;
+            height: 0.24rem;
+            background:url(img/d-nav.png);
+            background-size:100%;
+            top: 0.1rem;
+        }
+        .header-w{
+            line-height: 0.44rem;
+            text-align: center;
+            font-size:0.17rem;
+            color: #222;
+        }
+        .section{
+            height: 100%;
+    width: 100%;
+    padding: 0 0.25rem;
+        }
+
+        .next{
+            opacity: .3;
+    height: .45rem;
+    line-height: .46rem;
+    border-radius: 4px;
+    border: 0;
+    font-size: .16rem;    background-color: #e93b3d;
+    text-align: center;
+    color: white;
+    margin-top:0.15rem; 
+        }
+        .input{
+    width: 100%;
+    height: .45rem;
+    line-height: .45rem;
+    padding: 0 .05rem;
+    margin-top: .15rem;
+    background-color: #fff;
+        }
+        .input-left{
+            width: 0.62rem;
+            height: 0.44rem;
+            display: inline-block;
+            text-align: right;
+        }
+        .jj{
+            top: 0.03rem;
+           position: relative;
+            display: inline-block;
+            width: 0px;
+           height: 0px;
+           border: 0.05rem solid #ababab;
+           border-color:#ababab  transparent transparent transparent;
+      }
+      
+    </style>
+</head>
+<body>
+    <div class="quan">
+        <div class="header">
+                <div class="header-w">
+                    京东注册
+                </div>
+                <div class="header-f"></div>
+        </div>
+        <div class="section">
+            <div class="input">
+                <div class="input-left">+86 <div class="jj"></div>  </div>
+                <input type="text" placeholder="请输入手机号">
+            </div>
+            <div class="next">下一步</div>
+        </div>
+    </div>
+    <div id="mychart" style="width: 600px;height:400px;"></div>
+</body>
+</html>
+<script>
+    fnResize()
+    window.onresize = function () {
+    fnResize()
+    }
+    function fnResize() {
+    var deviceWidth = document.documentElement.clientWidth ||
+     window.innerWidth
+    if (deviceWidth >= 750) {
+    deviceWidth = 750
+    }
+    if (deviceWidth <= 320) {
+    deviceWidth = 320
+    }
+    document.documentElement.style.fontSize = (deviceWidth / 7.5*2) + 'px'
+    }
+    
+
+    var myChart = echarts.init(document.getElementById("mychart"));
+    var option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:335, name:'直接访问'},
+                {value:310, name:'邮件营销'},
+                {value:234, name:'联盟广告'},
+                {value:135, name:'视频广告'},
+                {value:1548, name:'搜索引擎'}
+            ]
+        }
+    ]
+};
+myChart.setOption(option);
+  
+
+</script>
+
+<script src="js/echarts.js"></script>
